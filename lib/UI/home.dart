@@ -33,13 +33,48 @@ class _Bill_SplitterState extends State<Bill_Splitter> {
                   color: Colors.pinkAccent.shade100,
                   borderRadius: BorderRadius.circular(12.0),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    Text("Total Per Person:"),
-                  ],
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text(" Total Per Person:"),
+                    ],
+                  ),
                 ),
-              )
+              ),
+              Container(
+                  margin: const EdgeInsets.only(top: 20.0),
+                  padding: const EdgeInsets.all(12.0),
+                  decoration: BoxDecoration(
+                    color: Colors.transparent,
+                    border: Border.all(
+                        color: Colors.blueGrey.shade100,
+                        style: BorderStyle.solid),
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  child: Column(
+                    children: <Widget>[
+                      TextField(
+                          keyboardType: const TextInputType.numberWithOptions(
+                            decimal: true,
+                          ),
+                          style: const TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.normal,
+                            fontSize: 20,
+                          ),
+                          decoration: const InputDecoration(
+                              prefixText: "Bill Amount: ",
+                              prefixIcon: Icon(Icons.attach_money)),
+                          onChanged: (String value) {
+                            if (double.tryParse(value) != null) {
+                              _billAmount = value as double;
+                            } else {
+                              _billAmount = 0.0;
+                            }
+                          }),
+                    ],
+                  ))
             ],
           ),
         ),
