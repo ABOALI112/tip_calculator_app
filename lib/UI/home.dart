@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Bill_Splitter extends StatefulWidget {
@@ -19,12 +18,13 @@ class _Bill_SplitterState extends State<Bill_Splitter> {
       title: "Bill_Tip_Calculator",
       home: Scaffold(
         body: Container(
-          margin: EdgeInsets.only(top: 122.0),
+          margin:
+              EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.1),
           alignment: Alignment.center,
           color: Colors.white,
           child: ListView(
             scrollDirection: Axis.vertical,
-            padding: EdgeInsets.all(20.5),
+            padding: const EdgeInsets.all(20.5),
             children: [
               Container(
                 width: 150,
@@ -32,6 +32,12 @@ class _Bill_SplitterState extends State<Bill_Splitter> {
                 decoration: BoxDecoration(
                   color: Colors.pinkAccent.shade100,
                   borderRadius: BorderRadius.circular(12.0),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text("Total Per Person:"),
+                  ],
                 ),
               )
             ],
