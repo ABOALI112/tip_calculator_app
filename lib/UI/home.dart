@@ -181,7 +181,7 @@ class _Bill_SplitterState extends State<Bill_Splitter> {
                         Padding(
                           padding: const EdgeInsets.all(18.0),
                           child: Text(
-                            "${_CalculateTotalTip(_billAmount, _personCounter, _tipPercentage)}",
+                            "${(_CalculateTotalTip(_billAmount, _personCounter, _tipPercentage)).toStringAsFixed(2)}",
                             style: TextStyle(
                               color: Colors.deepPurple.shade400,
                               fontWeight: FontWeight.bold,
